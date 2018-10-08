@@ -814,7 +814,7 @@ tutorial of how to do so in a txt file.
     private void githubMouseClicked(java.awt.event.MouseEvent evt) {                                    
         if (Desktop.isDesktopSupported()) {
             try {
-                Desktop.getDesktop().browse(new URI("https://github.com/JustVice/TextEncripter"));
+                Desktop.getDesktop().browse(new URI("https://github.com/JustVice?tab=repositories"));
             } catch (URISyntaxException | IOException ex) {
                 Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
             }
