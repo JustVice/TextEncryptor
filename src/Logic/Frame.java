@@ -794,7 +794,7 @@ tutorial of how to do so in a txt file.
     private void twitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twitterMouseClicked
         if (Desktop.isDesktopSupported()) {
             try {
-                Desktop.getDesktop().browse(new URI("https://twitter.com/JustVicee"));
+                Desktop.getDesktop().browse(new URI("https://twitter.com/JustVice1"));
             } catch (URISyntaxException | IOException ex) {
                 Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
             }
