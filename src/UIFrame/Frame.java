@@ -307,7 +307,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
-        deleteAllData.setText("Reset all data");
+        deleteAllData.setText("Delete all data");
         deleteAllData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteAllDataActionPerformed(evt);
@@ -354,7 +354,7 @@ public class Frame extends javax.swing.JFrame {
                         .addComponent(separatorCharLabel)
                         .addGap(29, 29, 29)
                         .addComponent(what3)))
-                .addGap(189, 199, Short.MAX_VALUE))
+                .addGap(189, 197, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -835,7 +835,7 @@ tutorial of how to do so in a txt file.
     }//GEN-LAST:event_githubMouseClicked
 
     private void deleteAllDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAllDataActionPerformed
-        String option = JOptionPane.showInputDialog(null, "Type \"Delete\" and accept to confirm data reset factory", "Delete data", 2);
+        String option = JOptionPane.showInputDialog(null, "Type \"delete\" and accept to confirm data reset factory.\nThis includes the logs folder.", "Delete data", 2);
         if (option != null) {
             option = option.toLowerCase();
             if (option.equals("delete")) {

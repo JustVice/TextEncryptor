@@ -324,7 +324,7 @@
                               <Component id="what3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="189" pref="199" max="32767" attributes="0"/>
+                      <EmptySpace min="189" pref="197" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -478,7 +478,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="deleteAllData">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Reset all data"/>
+                <Property name="text" type="java.lang.String" value="Delete all data"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteAllDataActionPerformed"/>
