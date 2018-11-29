@@ -24,7 +24,7 @@ public class Data {
         File path = new File(Static.DataPath);
         if (!path.exists()) {
             try {
-                BuildTxtFile(Static.DataFolderPath, "characters", Static.run.charactersTXTdefault());
+                BuildTxtFile(Static.DataFolderPath, "characters", Static.textKeeper.charactersTXTdefault());
                 ObjectOutputStream writeFile = new ObjectOutputStream(new FileOutputStream(Static.DataPath));
                 writeFile.writeObject(userData);
                 writeFile.close();
@@ -34,7 +34,7 @@ public class Data {
             }
         } else {
             try {
-                BuildTxtFile(Static.DataFolderPath, "characters", Static.run.charactersTXTdefault());
+                BuildTxtFile(Static.DataFolderPath, "characters", Static.textKeeper.charactersTXTdefault());
                 System.out.print("loading data... ");
                 ObjectInputStream getFile = new ObjectInputStream(new FileInputStream(Static.DataPath));
                 userData = (UserData) getFile.readObject();
@@ -198,7 +198,7 @@ public class Data {
             buffer.close();
         } catch (IOException ex) {
             System.out.println("File does not exist.");
-            BuildTxtFile(Static.DataFolderPath, "characters", Static.run.charactersTXTdefault());
+            BuildTxtFile(Static.DataFolderPath, "characters", Static.textKeeper.charactersTXTdefault());
             LoadCharactersListTxt(Static.charactersTXTdefaultPath);
 //            ex.printStackTrace();
             return false;
@@ -215,4 +215,5 @@ public class Data {
         }
         return file.exists();
     }
+    
 }

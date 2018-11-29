@@ -1,6 +1,9 @@
-package Logic;
+package UIFrame;
 
-import PopUpMessages.PopUpThread;
+import Logic.Run;
+import Logic.Static;
+import Logic.UserData;
+import PopUpMessagesDeprecated.PopUpThread;
 import java.awt.Desktop;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -65,6 +68,7 @@ public class Frame extends javax.swing.JFrame {
         separatorCharSave = new javax.swing.JButton();
         resetSeparatorChar = new javax.swing.JButton();
         PopUpMessagesCombo = new javax.swing.JRadioButton();
+        deleteAllData = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -303,6 +307,13 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
+        deleteAllData.setText("Reset all data");
+        deleteAllData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteAllDataActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -324,7 +335,10 @@ public class Frame extends javax.swing.JFrame {
                     .addComponent(saveCustomCharFile)
                     .addComponent(defaultTxtFileNameDisplay)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(126, 126, 126)
+                        .addComponent(deleteAllData))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,7 +354,7 @@ public class Frame extends javax.swing.JFrame {
                         .addComponent(separatorCharLabel)
                         .addGap(29, 29, 29)
                         .addComponent(what3)))
-                .addGap(189, 262, Short.MAX_VALUE))
+                .addGap(189, 199, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,8 +376,10 @@ public class Frame extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saveLogs)
                     .addComponent(what2))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteAllData))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(separatorCharLabel)
@@ -374,7 +390,7 @@ public class Frame extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(separatorCharSave)
                     .addComponent(resetSeparatorChar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addContainerGap())
         );
@@ -570,7 +586,6 @@ public class Frame extends javax.swing.JFrame {
                 for (int i = 0; i < Panel1.getText().length(); i++) {
                     boolean found = false;
                     for (int j = 0; j < Static.charactersList.size(); j++) {
-
                         String str = sb.charAt(0) + "";
                         String light = Static.charactersList.get(j).getLightChar();
                         if (light.equals(str)) {
@@ -624,7 +639,6 @@ public class Frame extends javax.swing.JFrame {
             System.out.println("SaveLogOn");
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
             Date date = new Date();
-//            System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
             try {
                 Static.data.BuildTxtFile(Static.DataFolderPath + "\\" + Static.logsDefaultName, dateFormat.format(date), "Text:\n" + Panel1.getText() + "\n\nEncrypted text equivalent:\n" + Panel2.getText());
             } catch (Exception e) {
@@ -639,7 +653,6 @@ public class Frame extends javax.swing.JFrame {
             System.out.println("SaveLogOn");
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date date = new Date();
-//            System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
             try {
                 Static.data.BuildTxtFile(Static.DataFolderPath + "\\" + Static.logsDefaultName, dateFormat.format(date), "Encrypted Text:\n" + Panel3.getText() + "\n\nText equivalent:\n" + Panel4.getText());
             } catch (Exception e) {
@@ -821,6 +834,21 @@ tutorial of how to do so in a txt file.
         }
     }//GEN-LAST:event_githubMouseClicked
 
+    private void deleteAllDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAllDataActionPerformed
+        String option = JOptionPane.showInputDialog(null, "Type \"Delete\" and accept to confirm data reset factory", "Delete data", 2);
+        if (option != null) {
+            option = option.toLowerCase();
+            if (option.equals("delete")) {
+                this.dispose();
+                Static.run.resetData();
+            } else {
+                MessagePopUp messagePopUp = new MessagePopUp("Cancelled");
+            }
+        } else {
+            MessagePopUp messagePopUp = new MessagePopUp("Cancelled");
+        }
+    }//GEN-LAST:event_deleteAllDataActionPerformed
+
     private void parameters() {
         Panel1.setLineWrap(true);
         Panel2.setLineWrap(true);
@@ -893,8 +921,9 @@ tutorial of how to do so in a txt file.
         String toClipBoardText = Panel2.getText();
         StringSelection stringClip = new StringSelection(toClipBoardText);
         clip.setContents(stringClip, stringClip);
-        PopUpThread popUpThread = new PopUpThread("Copied to clipboard", Static.defaultTimeForPopUpMessage);
-        popUpThread.start();
+        MessagePopUp m = new MessagePopUp("Copied to clipboard");
+//        PopUpThread popUpThread = new PopUpThread("Copied to clipboard", Static.defaultTimeForPopUpMessage);
+//        popUpThread.start();
     }
 
     private void copyToClipboardUnencrypt() {
@@ -902,8 +931,9 @@ tutorial of how to do so in a txt file.
         String toClipBoardText = Panel4.getText();
         StringSelection stringClip = new StringSelection(toClipBoardText);
         clip.setContents(stringClip, stringClip);
-        PopUpThread popUpThread = new PopUpThread("Copied to clipboard", Static.defaultTimeForPopUpMessage);
-        popUpThread.start();
+        MessagePopUp m = new MessagePopUp("Copied to clipboard");
+//        PopUpThread popUpThread = new PopUpThread("Copied to clipboard", Static.defaultTimeForPopUpMessage);
+//        popUpThread.start();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -922,6 +952,7 @@ tutorial of how to do so in a txt file.
     private javax.swing.JRadioButton copyToClipboardUnencrypt;
     private javax.swing.JButton copyUnencrypt;
     private javax.swing.JLabel defaultTxtFileNameDisplay;
+    private javax.swing.JButton deleteAllData;
     private javax.swing.JLabel github;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

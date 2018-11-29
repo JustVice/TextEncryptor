@@ -1,39 +1,39 @@
-package PopUpMessages;
+package PopUpMessagesDeprecated;
 
-import java.awt.Color;
-
-public class Logo extends javax.swing.JFrame {
-
-    public Logo() {
+public class PopUp extends javax.swing.JFrame {
+    
+    public PopUp(String label) {
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
-        setBackground(new Color(0, 0, 0, 0));
+        this.labelMess.setText(label);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        labelMess = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Logo1.png"))); // NOI18N
+        labelMess.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        labelMess.setText("MESSAGE");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(labelMess)
+                .addGap(0, 117, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(labelMess)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -41,6 +41,6 @@ public class Logo extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel labelMess;
     // End of variables declaration//GEN-END:variables
 }
