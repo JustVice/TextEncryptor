@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 public class Logo extends javax.swing.JFrame implements Runnable {
 
     public Logo() {
+        setIconImage(Static.getIconImage());
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);

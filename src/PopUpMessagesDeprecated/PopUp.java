@@ -1,8 +1,11 @@
 package PopUpMessagesDeprecated;
 
+import Logic.Static;
+
 public class PopUp extends javax.swing.JFrame {
     
     public PopUp(String label) {
+        setIconImage(Static.getIconImage());
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);

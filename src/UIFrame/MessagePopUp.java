@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 public class MessagePopUp extends javax.swing.JFrame implements Runnable {
 
     public MessagePopUp(String message) {
+        setIconImage(Static.getIconImage());
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);

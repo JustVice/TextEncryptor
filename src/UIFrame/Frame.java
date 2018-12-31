@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
 public class Frame extends javax.swing.JFrame {
 
     public Frame() {
+        setIconImage(Static.getIconImage());
         initComponents();
         setLocationRelativeTo(null);
         setTitle(Static.title + ". version = " + Static.version);

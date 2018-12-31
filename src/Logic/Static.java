@@ -1,5 +1,7 @@
 package Logic;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.LinkedList;
 
 public class Static {
@@ -19,5 +21,9 @@ public class Static {
     public static int defaultTimeForPopUpMessage = 750;
     public static int defaultTimeForLogo = 1170;
     public static String logsDefaultName = "Logs";
+    
+    public static Image getIconImage() {
+        return Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMG/iconLogo.png"));
+    }
 
 }
