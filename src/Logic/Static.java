@@ -7,11 +7,12 @@ public class Static {
     public static Run run;
     public static TextKeeper textKeeper = new TextKeeper();
     public static String defaultDarkCharSeparator = "°";
-    public static String version = "Beta 0.8.2", title = "Just Vice Text Encrypter";
+    public static String version = "Beta 0.8.2", title = "Text Encrypter";
     public static LinkedList<Character> charactersList = new LinkedList<Character>();
-    public static String folderForDataName = "Just Vice Text Encrypter";
-    public static String DataPath = System.getenv("APPDATA") + "\\" + folderForDataName + "\\UserData.txt";
-    public static String DataFolderPath = System.getenv("APPDATA") + "\\" + folderForDataName;
+    public static String folderForDataName = "TextEncrypter";
+    public static String globalFolderForData = "Just Vice";
+    public static String DataPath = System.getenv("APPDATA") + "\\"+globalFolderForData+"\\" + folderForDataName + "\\UserData.txt";
+    public static String DataFolderPath = System.getenv("APPDATA") + "\\"+globalFolderForData+"\\" + folderForDataName;
     public static Data data = new Data();
     public static String charactersTXTdefaultPath = DataFolderPath + "\\characters";
     public static String charactersTXTdefaultName = "characters";

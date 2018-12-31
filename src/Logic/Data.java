@@ -20,6 +20,7 @@ public class Data {
      * data will be saved and loaded from a folder.
      */
     public void LoadData() {
+        globalDir();
         dirFiles(Static.folderForDataName);
         File path = new File(Static.DataPath);
         if (!path.exists()) {
@@ -110,7 +111,7 @@ public class Data {
     }
 
     private void dirFiles(String folderName) {
-        String path = System.getenv("APPDATA") + "\\" + folderName;
+        String path = System.getenv("APPDATA") + "\\"+Static.globalFolderForData+"\\" + folderName;
         File file = new File(path);
         if (!file.exists()) {
             boolean created = file.mkdir();
@@ -214,6 +215,21 @@ public class Data {
             System.out.println("File " + str + "does not exists.");
         }
         return file.exists();
+    }
+    
+    private void globalDir() {
+        String path = System.getenv("APPDATA") + "\\" + Static.globalFolderForData;
+        File file = new File(path);
+        if (!file.exists()) {
+            boolean created = file.mkdir();
+            if (created) {
+                System.out.println("Global data folder on AppData created...");
+            } else {
+                programNotCompatible();
+            }
+        } else {
+            System.out.println("Global data folder on AppData found...");
+        }
     }
     
 }
