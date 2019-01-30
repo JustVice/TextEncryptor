@@ -11,6 +11,7 @@ public class UserData implements Serializable {
     private boolean copyToClipboardEncrypt = true;
     private boolean copyToClipboardUnencrypt = true;
     private boolean PopUpMessagesOnOff = true;
+    private boolean showStartLogo = true;
 
     public UserData() {
     }
@@ -62,7 +63,13 @@ public class UserData implements Serializable {
     public void setPopUpMessagesOnOff(boolean PopUpMessagesOnOff) {
         this.PopUpMessagesOnOff = PopUpMessagesOnOff;
     }
-    
-    
+
+    public boolean isShowStartLogo() {
+        return showStartLogo;
+    }
+
+    public void setShowStartLogo(boolean showStartLogo) {
+        this.showStartLogo = showStartLogo;
+    }
 
 }

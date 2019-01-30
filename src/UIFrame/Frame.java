@@ -70,6 +70,9 @@ public class Frame extends javax.swing.JFrame {
         resetSeparatorChar = new javax.swing.JButton();
         PopUpMessagesCombo = new javax.swing.JRadioButton();
         deleteAllData = new javax.swing.JButton();
+        createNewRandomKeys = new javax.swing.JButton();
+        showStartLogoCombo = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -227,20 +230,25 @@ public class Frame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Unencrypt", jPanel2);
 
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jButton4.setText("Open data folder");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
+        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
         jLabel2.setText("Custom char file");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         FieldcustomCharTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 FieldcustomCharTxtKeyTyped(evt);
             }
         });
+        jPanel3.add(FieldcustomCharTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 74, 209, -1));
 
         saveCustomCharFile.setText("Load and save");
         saveCustomCharFile.addActionListener(new java.awt.event.ActionListener() {
@@ -248,8 +256,10 @@ public class Frame extends javax.swing.JFrame {
                 saveCustomCharFileActionPerformed(evt);
             }
         });
+        jPanel3.add(saveCustomCharFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 115, -1, -1));
 
         defaultTxtFileNameDisplay.setText("Default: ");
+        jPanel3.add(defaultTxtFileNameDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 42, -1, -1));
 
         what1.setText("?");
         what1.addActionListener(new java.awt.event.ActionListener() {
@@ -257,6 +267,8 @@ public class Frame extends javax.swing.JFrame {
                 what1ActionPerformed(evt);
             }
         });
+        jPanel3.add(what1, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 16, -1, -1));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 228, 10));
 
         saveLogs.setText("Save logs");
         saveLogs.addActionListener(new java.awt.event.ActionListener() {
@@ -264,6 +276,7 @@ public class Frame extends javax.swing.JFrame {
                 saveLogsActionPerformed(evt);
             }
         });
+        jPanel3.add(saveLogs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 177, -1, -1));
 
         what2.setText("?");
         what2.addActionListener(new java.awt.event.ActionListener() {
@@ -271,14 +284,18 @@ public class Frame extends javax.swing.JFrame {
                 what2ActionPerformed(evt);
             }
         });
+        jPanel3.add(what2, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 177, -1, -1));
+        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 219, 228, 10));
 
         separatorCharLabel.setText("Separator char: ");
+        jPanel3.add(separatorCharLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 239, -1, -1));
 
         separatorCharField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 separatorCharFieldKeyTyped(evt);
             }
         });
+        jPanel3.add(separatorCharField, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 262, 31, -1));
 
         what3.setText("?");
         what3.addActionListener(new java.awt.event.ActionListener() {
@@ -286,6 +303,7 @@ public class Frame extends javax.swing.JFrame {
                 what3ActionPerformed(evt);
             }
         });
+        jPanel3.add(what3, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 235, -1, -1));
 
         separatorCharSave.setText("Save");
         separatorCharSave.addActionListener(new java.awt.event.ActionListener() {
@@ -293,6 +311,7 @@ public class Frame extends javax.swing.JFrame {
                 separatorCharSaveActionPerformed(evt);
             }
         });
+        jPanel3.add(separatorCharSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 288, -1, -1));
 
         resetSeparatorChar.setText("Reset");
         resetSeparatorChar.addActionListener(new java.awt.event.ActionListener() {
@@ -300,6 +319,7 @@ public class Frame extends javax.swing.JFrame {
                 resetSeparatorCharActionPerformed(evt);
             }
         });
+        jPanel3.add(resetSeparatorChar, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 288, -1, -1));
 
         PopUpMessagesCombo.setText("Show PopUp messages");
         PopUpMessagesCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -307,6 +327,7 @@ public class Frame extends javax.swing.JFrame {
                 PopUpMessagesComboActionPerformed(evt);
             }
         });
+        jPanel3.add(PopUpMessagesCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
         deleteAllData.setText("Delete all data");
         deleteAllData.addActionListener(new java.awt.event.ActionListener() {
@@ -314,87 +335,31 @@ public class Frame extends javax.swing.JFrame {
                 deleteAllDataActionPerformed(evt);
             }
         });
+        jPanel3.add(deleteAllData, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(saveLogs)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(what2))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(60, 60, 60)
-                        .addComponent(what1)
-                        .addGap(81, 81, 81)
-                        .addComponent(PopUpMessagesCombo))
-                    .addComponent(FieldcustomCharTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(saveCustomCharFile)
-                    .addComponent(defaultTxtFileNameDisplay)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126)
-                        .addComponent(deleteAllData))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(separatorCharSave)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(resetSeparatorChar))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(separatorCharField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jButton4)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(separatorCharLabel)
-                        .addGap(29, 29, 29)
-                        .addComponent(what3)))
-                .addGap(189, 197, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(what1)
-                    .addComponent(PopUpMessagesCombo))
-                .addGap(3, 3, 3)
-                .addComponent(defaultTxtFileNameDisplay)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FieldcustomCharTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(saveCustomCharFile)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(saveLogs)
-                    .addComponent(what2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deleteAllData))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(separatorCharLabel)
-                    .addComponent(what3))
-                .addGap(4, 4, 4)
-                .addComponent(separatorCharField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(separatorCharSave)
-                    .addComponent(resetSeparatorChar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addContainerGap())
-        );
+        createNewRandomKeys.setText("Create new random keys");
+        createNewRandomKeys.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createNewRandomKeysActionPerformed(evt);
+            }
+        });
+        jPanel3.add(createNewRandomKeys, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
+
+        showStartLogoCombo.setText("Show start logo");
+        showStartLogoCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showStartLogoComboActionPerformed(evt);
+            }
+        });
+        jPanel3.add(showStartLogoCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, -1, -1));
 
         jTabbedPane1.addTab("Options", jPanel3);
 
@@ -850,6 +815,35 @@ tutorial of how to do so in a txt file.
         }
     }//GEN-LAST:event_deleteAllDataActionPerformed
 
+    private void createNewRandomKeysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewRandomKeysActionPerformed
+        try {
+            String name = JOptionPane.showInputDialog("Please, name the keys file..");
+            if (!name.equals("")) {
+                System.out.println("build");
+                String keys = Static.textKeeper.randomKeysBuildUp();
+                Static.data.BuildTxtFile(Static.DataFolderPath, name + " " + ((int) (Math.random() * 10000)), keys);
+                MessagePopUp messagePopUp = new MessagePopUp("Keys created!");
+            } else {
+                Static.run.message("You need to provide a name to your keys file! Please, try again.", "No Name", 2);
+            }
+        } catch (Exception e) {System.out.println("cancelled");
+        }
+    }//GEN-LAST:event_createNewRandomKeysActionPerformed
+
+    private void showStartLogoComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showStartLogoComboActionPerformed
+        if (showStartLogoCombo.isSelected()) {
+            Static.data.getUserData().setShowStartLogo(true);
+            Static.data.updateInfo();
+        } else {
+            Static.data.getUserData().setShowStartLogo(false);
+            Static.data.updateInfo();
+        }
+    }//GEN-LAST:event_showStartLogoComboActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.out.println(Static.DataFolderPath);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void parameters() {
         Panel1.setLineWrap(true);
         Panel2.setLineWrap(true);
@@ -861,6 +855,11 @@ tutorial of how to do so in a txt file.
         parametersCopyToClipboardUnencrypt();
         separatorCharLabel.setText("Separator char: " + Static.data.getUserData().getDarkCharSeparator());
         parametersPopUpMessages();
+        if (Static.data.getUserData().isShowStartLogo()) {
+            showStartLogoCombo.setSelected(true);
+        } else {
+            showStartLogoCombo.setSelected(false);
+        }
     }
 
     private void disableButtons() {
@@ -952,9 +951,11 @@ tutorial of how to do so in a txt file.
     private javax.swing.JRadioButton copyToClipboardEncrypt;
     private javax.swing.JRadioButton copyToClipboardUnencrypt;
     private javax.swing.JButton copyUnencrypt;
+    private javax.swing.JButton createNewRandomKeys;
     private javax.swing.JLabel defaultTxtFileNameDisplay;
     private javax.swing.JButton deleteAllData;
     private javax.swing.JLabel github;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -978,6 +979,7 @@ tutorial of how to do so in a txt file.
     private javax.swing.JTextField separatorCharField;
     private javax.swing.JLabel separatorCharLabel;
     private javax.swing.JButton separatorCharSave;
+    private javax.swing.JRadioButton showStartLogoCombo;
     private javax.swing.JLabel twitter;
     private javax.swing.JButton unencrypt;
     private javax.swing.JButton what1;

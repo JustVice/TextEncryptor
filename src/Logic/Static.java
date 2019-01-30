@@ -9,7 +9,7 @@ public class Static {
     public static Run run;
     public static TextKeeper textKeeper = new TextKeeper();
     public static String defaultDarkCharSeparator = "°";
-    public static String version = "Beta 0.8.2", title = "Text Encrypter";
+    public static String version = "BETA 0.8.3", title = "Text Encrypter";
     public static LinkedList<Character> charactersList = new LinkedList<Character>();
     public static String folderForDataName = "TextEncrypter";
     public static String globalFolderForData = "Just Vice";
