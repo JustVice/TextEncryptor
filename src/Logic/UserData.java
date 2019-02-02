@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class UserData implements Serializable {
 
     private final long serialVersionUID = 2883991000023476147L;
-    private String txtFileWithCharactersDefaultNameUserData = "characters";
+    private String keysName = Static.defaultKeysName;
     private String DarkCharSeparator = Static.defaultDarkCharSeparator;
     private boolean saveLogs = false;
     private boolean copyToClipboardEncrypt = true;
@@ -16,12 +16,12 @@ public class UserData implements Serializable {
     public UserData() {
     }
 
-    public String getTxtFileWithCharactersDefaultNameUserData() {
-        return txtFileWithCharactersDefaultNameUserData;
+    public String getKeysName() {
+        return keysName;
     }
 
-    public void setTxtFileWithCharactersDefaultNameUserData(String txtFileWithCharactersDefaultName) {
-        this.txtFileWithCharactersDefaultNameUserData = txtFileWithCharactersDefaultName;
+    public void setKeysName(String keysName) {
+        this.keysName = keysName;
     }
 
     public String getDarkCharSeparator() {

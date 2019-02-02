@@ -1,8 +1,6 @@
 package UIFrame;
 
-import Logic.Run;
 import Logic.Static;
-import Logic.UserData;
 import PopUpMessagesDeprecated.PopUpThread;
 import java.awt.Desktop;
 import java.awt.datatransfer.Clipboard;
@@ -26,7 +24,7 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle(Static.title + ". version = " + Static.version);
-        parameters();
+        settings();
     }
 
     @SuppressWarnings("unchecked")
@@ -72,7 +70,6 @@ public class Frame extends javax.swing.JFrame {
         deleteAllData = new javax.swing.JButton();
         createNewRandomKeys = new javax.swing.JButton();
         showStartLogoCombo = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -351,15 +348,7 @@ public class Frame extends javax.swing.JFrame {
                 showStartLogoComboActionPerformed(evt);
             }
         });
-        jPanel3.add(showStartLogoCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, -1, -1));
+        jPanel3.add(showStartLogoCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
 
         jTabbedPane1.addTab("Options", jPanel3);
 
@@ -651,9 +640,9 @@ public class Frame extends javax.swing.JFrame {
         if (!FieldcustomCharTxt.getText().equals("")) {
             boolean exists = Static.data.verifyCustomCharsTxt(FieldcustomCharTxt.getText());
             if (exists) {
-                Static.data.getUserData().setTxtFileWithCharactersDefaultNameUserData(FieldcustomCharTxt.getText());
+                Static.data.getUserData().setKeysName(FieldcustomCharTxt.getText());
                 Static.data.updateInfo();
-                defaultTxtFileNameDisplay.setText("Current: " + Static.data.getUserData().getTxtFileWithCharactersDefaultNameUserData());
+                defaultTxtFileNameDisplay.setText("Current: " + Static.data.getUserData().getKeysName());
                 FieldcustomCharTxt.setText("");
                 PopUpThread popUpThread = new PopUpThread("Success!", Static.defaultTimeForPopUpMessage);
                 popUpThread.start();
@@ -840,16 +829,13 @@ tutorial of how to do so in a txt file.
         }
     }//GEN-LAST:event_showStartLogoComboActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.out.println(Static.DataFolderPath);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void parameters() {
+    private void settings() {
         Panel1.setLineWrap(true);
         Panel2.setLineWrap(true);
         Panel3.setLineWrap(true);
         Panel4.setLineWrap(true);
-        defaultTxtFileNameDisplay.setText("Current: " + Static.data.getUserData().getTxtFileWithCharactersDefaultNameUserData());
+        this.setResizable(false);
+        defaultTxtFileNameDisplay.setText("Current: " + Static.data.getUserData().getKeysName());
         parametersSaveLogsCheck();
         parametersCopyToClipboardEncrypt();
         parametersCopyToClipboardUnencrypt();
@@ -955,7 +941,6 @@ tutorial of how to do so in a txt file.
     private javax.swing.JLabel defaultTxtFileNameDisplay;
     private javax.swing.JButton deleteAllData;
     private javax.swing.JLabel github;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

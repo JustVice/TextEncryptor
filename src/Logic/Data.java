@@ -25,7 +25,7 @@ public class Data {
         File path = new File(Static.DataPath);
         if (!path.exists()) {
             try {
-                BuildTxtFile(Static.DataFolderPath, "characters", Static.textKeeper.charactersTXTdefault());
+                BuildTxtFile(Static.DataFolderPath, Static.defaultKeysName, Static.textKeeper.defaultKeysDistribution());
                 ObjectOutputStream writeFile = new ObjectOutputStream(new FileOutputStream(Static.DataPath));
                 writeFile.writeObject(userData);
                 writeFile.close();
@@ -35,7 +35,6 @@ public class Data {
             }
         } else {
             try {
-                BuildTxtFile(Static.DataFolderPath, "characters", Static.textKeeper.charactersTXTdefault());
                 System.out.print("loading data... ");
                 ObjectInputStream getFile = new ObjectInputStream(new FileInputStream(Static.DataPath));
                 userData = (UserData) getFile.readObject();
@@ -46,7 +45,7 @@ public class Data {
                 e.printStackTrace();
             }
         }
-        LoadCharactersListTxt(Static.DataFolderPath + "\\" + Static.data.getUserData().getTxtFileWithCharactersDefaultNameUserData());
+        LoadKeys(Static.DataFolderPath + "\\" + Static.data.getUserData().getKeysName());
     }
 
     private void programNotCompatible() {
@@ -68,7 +67,7 @@ public class Data {
                 writeFile.writeObject(userData);
                 writeFile.close();
                 Static.charactersList.clear();
-                LoadCharactersListTxt(Static.DataFolderPath + "\\" + Static.data.userData.getTxtFileWithCharactersDefaultNameUserData());
+                LoadKeys(Static.DataFolderPath + "\\" + Static.data.userData.getKeysName());
                 System.out.println("success");
             } catch (IOException e) {
                 System.out.println("Error updating data");
@@ -77,27 +76,6 @@ public class Data {
         } else {
             JOptionPane.showMessageDialog(null, "DATA DIRECTORY DELETED. THE PROGRAM WILL CLOSE");
             System.exit(0);
-        }
-    }
-
-    public void readLines(String pathName) {
-        try {
-            FileReader entrada = new FileReader(pathName + ".txt");
-            BufferedReader buffer = new BufferedReader(entrada);
-            String linea = "";
-            while (linea != null) {
-                linea = buffer.readLine();
-                if (linea != null) {
-                    System.out.println(linea);
-                }
-            }
-            entrada.close();
-            buffer.close();
-            System.out.println("");
-
-        } catch (IOException ex) {
-            System.out.println("File does not exist.\n");
-            ex.printStackTrace();
         }
     }
 
@@ -120,8 +98,6 @@ public class Data {
             } else {
                 programNotCompatible();
             }
-        } else {
-            System.out.println("Folder on AppData found...");
         }
     }
 
@@ -147,21 +123,21 @@ public class Data {
             System.out.println("Error\n" + ex);
         }
     }
-
     
-    /*DEFECTIVE METHOD*/
-    private boolean LoadCharactersListTxt(String pathName) {
+    
+    private boolean LoadKeys(String pathName) {
         try {
             File file = new File(pathName + ".txt");
             FileReader entrada;
             if (file.exists()) {
-                System.out.println("CUSTOM CHARS LOADED");
+                System.out.println("Keys loaded");
                 entrada = new FileReader(pathName + ".txt");
             } else {
-                System.out.println("DEFAULT CHARS LOADED");
-                Static.data.getUserData().setTxtFileWithCharactersDefaultNameUserData(Static.charactersTXTdefaultName);
+                System.out.println("keys not found. Default keys loaded");
+                BuildTxtFile(Static.DataFolderPath, Static.defaultKeysName, Static.textKeeper.defaultKeysDistribution());
+                Static.data.getUserData().setKeysName(Static.defaultKeysName);
                 Static.data.updateInfo();
-                entrada = new FileReader(Static.charactersTXTdefaultPath + ".txt");
+                entrada = new FileReader(Static.defaultKeysPath);
             }
             BufferedReader buffer = new BufferedReader(entrada);
             String linea = "";
@@ -182,11 +158,11 @@ public class Data {
                             }
                         } catch (Exception e) {
                             System.out.println("PROGRAM MALFUNCTION");
-                            String str = "Custom char name: " + Static.data.getUserData().getTxtFileWithCharactersDefaultNameUserData() + "\n"
+                            String str = "Custom char name: " + Static.data.getUserData().getKeysName()+ "\n"
                                     + "Your custom char file has a wrong syntax. Please follow the instructions inside\n"
                                     + "the user manual and review syntax.\nThe program will set the default characters and close now.";
                             JOptionPane.showMessageDialog(null, str, "WRONG SYNTAX", 0);
-                            Static.data.getUserData().setTxtFileWithCharactersDefaultNameUserData(Static.charactersTXTdefaultName);
+                            Static.data.getUserData().setKeysName(Static.defaultKeysName);
                             Static.data.updateInfo();
                             System.exit(0);
                         }
@@ -199,8 +175,8 @@ public class Data {
             buffer.close();
         } catch (IOException ex) {
             System.out.println("File does not exist.");
-            BuildTxtFile(Static.DataFolderPath, "characters", Static.textKeeper.charactersTXTdefault());
-            LoadCharactersListTxt(Static.charactersTXTdefaultPath);
+            BuildTxtFile(Static.DataFolderPath, Static.defaultKeysName, Static.textKeeper.defaultKeysDistribution());
+            LoadKeys(Static.defaultKeysPath);
 //            ex.printStackTrace();
             return false;
         }
@@ -227,8 +203,6 @@ public class Data {
             } else {
                 programNotCompatible();
             }
-        } else {
-            System.out.println("Global data folder on AppData found...");
         }
     }
     
