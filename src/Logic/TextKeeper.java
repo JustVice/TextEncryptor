@@ -309,13 +309,7 @@ public class TextKeeper {
                 + "-There is a log txt file called \"Separator Char changes\" inside the Data Folder where \n"
                 + "you can find the changes the user have made to the Separator Char with date and hour.\n"
                 + "\n"
-                + "------------------------------------O------------------------------------\n"
-                + "\n"
-                + "3-ABOUT THE AUTHOR\n"
-                + "\n"
-                + "I go on Internet with the name of Just Vice.\n"
-                + "I'm a person who loves to create.\n"
-                + "This is just one more of my creations.";
+                + "------------------------------------O------------------------------------\n";
     }
     
 }

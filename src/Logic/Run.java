@@ -2,10 +2,15 @@ package Logic;
 
 import UIFrame.Logo;
 import UIFrame.Frame;
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -119,6 +124,17 @@ public class Run {
     private boolean keysSyntaxCheck() {
 
         return true;
+    }
+
+    //Opens a link on the internet browser
+    public static void openLink(String link) {
+        if (Desktop.isDesktopSupported()) {
+            try {
+                Desktop.getDesktop().browse(new URI(link));
+            } catch (URISyntaxException | IOException ex) {
+                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
 }

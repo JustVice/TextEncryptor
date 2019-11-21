@@ -1,5 +1,6 @@
 package UIFrame;
 
+import Logic.Run;
 import Logic.Static;
 import PopUpMessagesDeprecated.PopUpThread;
 import java.awt.Desktop;
@@ -23,7 +24,7 @@ public class Frame extends javax.swing.JFrame {
         setIconImage(Static.getIconImage());
         initComponents();
         setLocationRelativeTo(null);
-        setTitle(Static.title + ". version = " + Static.version);
+        setTitle(Static.BAR_MESSAGE);
         settings();
     }
 
@@ -70,6 +71,7 @@ public class Frame extends javax.swing.JFrame {
         deleteAllData = new javax.swing.JButton();
         createNewRandomKeys = new javax.swing.JButton();
         showStartLogoCombo = new javax.swing.JRadioButton();
+        jButton_open_user_manual = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -78,6 +80,7 @@ public class Frame extends javax.swing.JFrame {
         alllinks = new javax.swing.JLabel();
         github = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        alllinks1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -227,25 +230,20 @@ public class Frame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Unencrypt", jPanel2);
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jButton4.setText("Open data folder");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, -1, -1));
 
         jLabel2.setText("Custom char file");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         FieldcustomCharTxt.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 FieldcustomCharTxtKeyTyped(evt);
             }
         });
-        jPanel3.add(FieldcustomCharTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 74, 209, -1));
 
         saveCustomCharFile.setText("Load and save");
         saveCustomCharFile.addActionListener(new java.awt.event.ActionListener() {
@@ -253,10 +251,8 @@ public class Frame extends javax.swing.JFrame {
                 saveCustomCharFileActionPerformed(evt);
             }
         });
-        jPanel3.add(saveCustomCharFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 115, -1, -1));
 
         defaultTxtFileNameDisplay.setText("Default: ");
-        jPanel3.add(defaultTxtFileNameDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 42, -1, -1));
 
         what1.setText("?");
         what1.addActionListener(new java.awt.event.ActionListener() {
@@ -264,8 +260,6 @@ public class Frame extends javax.swing.JFrame {
                 what1ActionPerformed(evt);
             }
         });
-        jPanel3.add(what1, new org.netbeans.lib.awtextra.AbsoluteConstraints(147, 16, -1, -1));
-        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, 228, 10));
 
         saveLogs.setText("Save logs");
         saveLogs.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +267,6 @@ public class Frame extends javax.swing.JFrame {
                 saveLogsActionPerformed(evt);
             }
         });
-        jPanel3.add(saveLogs, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 177, -1, -1));
 
         what2.setText("?");
         what2.addActionListener(new java.awt.event.ActionListener() {
@@ -281,18 +274,14 @@ public class Frame extends javax.swing.JFrame {
                 what2ActionPerformed(evt);
             }
         });
-        jPanel3.add(what2, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 177, -1, -1));
-        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 219, 228, 10));
 
         separatorCharLabel.setText("Separator char: ");
-        jPanel3.add(separatorCharLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 239, -1, -1));
 
         separatorCharField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 separatorCharFieldKeyTyped(evt);
             }
         });
-        jPanel3.add(separatorCharField, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 262, 31, -1));
 
         what3.setText("?");
         what3.addActionListener(new java.awt.event.ActionListener() {
@@ -300,7 +289,6 @@ public class Frame extends javax.swing.JFrame {
                 what3ActionPerformed(evt);
             }
         });
-        jPanel3.add(what3, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 235, -1, -1));
 
         separatorCharSave.setText("Save");
         separatorCharSave.addActionListener(new java.awt.event.ActionListener() {
@@ -308,7 +296,6 @@ public class Frame extends javax.swing.JFrame {
                 separatorCharSaveActionPerformed(evt);
             }
         });
-        jPanel3.add(separatorCharSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 288, -1, -1));
 
         resetSeparatorChar.setText("Reset");
         resetSeparatorChar.addActionListener(new java.awt.event.ActionListener() {
@@ -316,7 +303,6 @@ public class Frame extends javax.swing.JFrame {
                 resetSeparatorCharActionPerformed(evt);
             }
         });
-        jPanel3.add(resetSeparatorChar, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 288, -1, -1));
 
         PopUpMessagesCombo.setText("Show PopUp messages");
         PopUpMessagesCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -324,7 +310,6 @@ public class Frame extends javax.swing.JFrame {
                 PopUpMessagesComboActionPerformed(evt);
             }
         });
-        jPanel3.add(PopUpMessagesCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
         deleteAllData.setText("Delete all data");
         deleteAllData.addActionListener(new java.awt.event.ActionListener() {
@@ -332,7 +317,6 @@ public class Frame extends javax.swing.JFrame {
                 deleteAllDataActionPerformed(evt);
             }
         });
-        jPanel3.add(deleteAllData, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, -1, -1));
 
         createNewRandomKeys.setText("Create new random keys");
         createNewRandomKeys.addActionListener(new java.awt.event.ActionListener() {
@@ -340,7 +324,6 @@ public class Frame extends javax.swing.JFrame {
                 createNewRandomKeysActionPerformed(evt);
             }
         });
-        jPanel3.add(createNewRandomKeys, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
 
         showStartLogoCombo.setText("Show start logo");
         showStartLogoCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -348,12 +331,135 @@ public class Frame extends javax.swing.JFrame {
                 showStartLogoComboActionPerformed(evt);
             }
         });
-        jPanel3.add(showStartLogoCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+
+        jButton_open_user_manual.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton_open_user_manual.setText("OPEN USER MANUAL");
+        jButton_open_user_manual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_open_user_manualActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(defaultTxtFileNameDisplay))
+                        .addGap(60, 60, 60)
+                        .addComponent(what1)
+                        .addGap(96, 96, 96)
+                        .addComponent(PopUpMessagesCombo))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(FieldcustomCharTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71)
+                        .addComponent(createNewRandomKeys))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(saveCustomCharFile)
+                        .addGap(177, 177, 177)
+                        .addComponent(showStartLogoCombo))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(saveLogs)
+                        .addGap(6, 6, 6)
+                        .addComponent(what2))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(separatorCharField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(separatorCharSave)
+                        .addGap(6, 6, 6)
+                        .addComponent(resetSeparatorChar))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton4)
+                        .addGap(242, 242, 242)
+                        .addComponent(jButton_open_user_manual, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleteAllData)))
+                .addGap(0, 11, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(separatorCharLabel)
+                        .addGap(29, 29, 29)
+                        .addComponent(what3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(what1)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(8, 8, 8)
+                                .addComponent(defaultTxtFileNameDisplay))
+                            .addComponent(PopUpMessagesCombo))))
+                .addGap(4, 4, 4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(FieldcustomCharTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(createNewRandomKeys))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(saveCustomCharFile))
+                    .addComponent(showStartLogoCombo))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(saveLogs)
+                    .addComponent(what2))
+                .addGap(19, 19, 19)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(separatorCharLabel))
+                    .addComponent(what3))
+                .addGap(10, 10, 10)
+                .addComponent(separatorCharField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(separatorCharSave)
+                    .addComponent(resetSeparatorChar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4)
+                            .addComponent(deleteAllData)))
+                    .addComponent(jButton_open_user_manual, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
+        );
 
         jTabbedPane1.addTab("Options", jPanel3);
 
         jLabel1.setFont(new java.awt.Font("Bernard MT Condensed", 0, 24)); // NOI18N
-        jLabel1.setText("<html>- Made by Just Vice<br/>- Programmer<br/>- Digital artist<br/><br/>You are welcome</html>");
+        jLabel1.setText("<html> Made by Just Vice</html>");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Logo1.png"))); // NOI18N
 
@@ -368,7 +474,7 @@ public class Frame extends javax.swing.JFrame {
         });
 
         alllinks.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        alllinks.setText("<html><a href=\"https://twitter.com/JustVicee\">All Links</a></html>");
+        alllinks.setText("<html><a href=\"https://twitter.com/JustVicee\">Text Ecrypter page</a></html>");
         alllinks.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 alllinksMouseClicked(evt);
@@ -385,29 +491,40 @@ public class Frame extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/jv.png"))); // NOI18N
 
+        alllinks1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        alllinks1.setText("<html><a href=\"https://twitter.com/JustVicee\">Content links</a></html>");
+        alllinks1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                alllinks1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(twitter, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(github, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alllinks, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 141, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(twitter)
+                            .addComponent(github)
+                            .addComponent(alllinks1)
+                            .addComponent(alllinks, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53))))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(291, 291, 291)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 325, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(139, 139, 139)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(63, 63, 63)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,25 +532,27 @@ public class Frame extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
                                 .addComponent(twitter, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(13, 13, 13)
                                 .addComponent(github, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(alllinks, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel5)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(alllinks1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(alllinks, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
 
         jTabbedPane1.addTab("About", jPanel4);
@@ -760,33 +879,29 @@ tutorial of how to do so in a txt file.
     }//GEN-LAST:event_PopUpMessagesComboActionPerformed
 
     private void twitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twitterMouseClicked
-        if (Desktop.isDesktopSupported()) {
-            try {
-                Desktop.getDesktop().browse(new URI("https://twitter.com/JustVice1"));
-            } catch (URISyntaxException | IOException ex) {
-                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        Run.openLink("https://justvice.github.io/s/twitter");
     }//GEN-LAST:event_twitterMouseClicked
 
     private void alllinksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alllinksMouseClicked
-        if (Desktop.isDesktopSupported()) {
-            try {
-                Desktop.getDesktop().browse(new URI("https://justvice.wixsite.com/info"));
-            } catch (URISyntaxException | IOException ex) {
-                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//        if (Desktop.isDesktopSupported()) {
+//            try {
+//                Desktop.getDesktop().browse(new URI("https://justvice.wixsite.com/info"));
+//            } catch (URISyntaxException | IOException ex) {
+//                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+Run.openLink("https://justvice.github.io/");
     }//GEN-LAST:event_alllinksMouseClicked
 
     private void githubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_githubMouseClicked
-        if (Desktop.isDesktopSupported()) {
-            try {
-                Desktop.getDesktop().browse(new URI("https://github.com/JustVice?tab=repositories"));
-            } catch (URISyntaxException | IOException ex) {
-                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//        if (Desktop.isDesktopSupported()) {
+//            try {
+//                Desktop.getDesktop().browse(new URI("https://github.com/JustVice?tab=repositories"));
+//            } catch (URISyntaxException | IOException ex) {
+//                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+        Run.openLink("https://justvice.github.io/s/github-repos");
     }//GEN-LAST:event_githubMouseClicked
 
     private void deleteAllDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAllDataActionPerformed
@@ -828,6 +943,16 @@ tutorial of how to do so in a txt file.
             Static.data.updateInfo();
         }
     }//GEN-LAST:event_showStartLogoComboActionPerformed
+
+    private void alllinks1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alllinks1MouseClicked
+        // TODO add your handling code here:
+        Run.openLink("https://justvice.github.io/s/links");
+    }//GEN-LAST:event_alllinks1MouseClicked
+
+    private void jButton_open_user_manualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_open_user_manualActionPerformed
+        // TODO add your handling code here:
+        Run.openLink("https://github.com/JustVice/TextEncryptor/wiki");
+    }//GEN-LAST:event_jButton_open_user_manualActionPerformed
 
     private void settings() {
         Panel1.setLineWrap(true);
@@ -930,6 +1055,7 @@ tutorial of how to do so in a txt file.
     private javax.swing.JTextArea Panel4;
     private javax.swing.JRadioButton PopUpMessagesCombo;
     private javax.swing.JLabel alllinks;
+    private javax.swing.JLabel alllinks1;
     private javax.swing.JButton clear1and2;
     private javax.swing.JButton clear3and4;
     private javax.swing.JButton convert;
@@ -942,6 +1068,7 @@ tutorial of how to do so in a txt file.
     private javax.swing.JButton deleteAllData;
     private javax.swing.JLabel github;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton_open_user_manual;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

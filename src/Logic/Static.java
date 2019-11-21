@@ -10,9 +10,9 @@ public class Static {
     public static Run run;
     public static TextKeeper textKeeper = new TextKeeper();
     public static String defaultDarkCharSeparator = "°";
-    public static String version = "BETA 0.8.4", title = "Text Encrypter";
+    public static String version = "0.9", title = "Text Encryptor";
     public static LinkedList<Character> charactersList = new LinkedList<Character>();
-    public static String folderForDataName = "TextEncrypter";
+    public static String folderForDataName = "TextEncryptor";
     public static String globalFolderForData = "Just Vice";
     public static String DataPath = System.getenv("APPDATA") + "\\" + globalFolderForData + "\\" + folderForDataName + "\\UserData.txt";
     public static String DataFolderPath = System.getenv("APPDATA") + "\\" + globalFolderForData + "\\" + folderForDataName;
@@ -21,6 +21,7 @@ public class Static {
     public static int defaultTimeForPopUpMessage = 750;
     public static int defaultTimeForLogo = 1170;
     public static String logsDefaultName = "Logs";
+    public static String BAR_MESSAGE = title + " " + version;
 
     public static Image getIconImage() {
         return Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMG/iconLogo.png"));
