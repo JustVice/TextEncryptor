@@ -890,7 +890,7 @@ tutorial of how to do so in a txt file.
 //                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
 //            }
 //        }
-Run.openLink("https://justvice.github.io/");
+Run.openLink("https://justvice.github.io/h/technology/java/text-encryptor/");
     }//GEN-LAST:event_alllinksMouseClicked
 
     private void githubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_githubMouseClicked
