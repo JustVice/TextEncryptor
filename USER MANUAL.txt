@@ -1,4 +1,4 @@
-﻿Just Vice Text Encryptor. Version 0.9
+﻿SPLIT VICE Text Encryptor. Version 0.9
 
 Home GitHub Page Wiki
 

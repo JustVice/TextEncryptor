@@ -459,7 +459,7 @@ public class Frame extends javax.swing.JFrame {
         jTabbedPane1.addTab("Options", jPanel3);
 
         jLabel1.setFont(new java.awt.Font("Bernard MT Condensed", 0, 24)); // NOI18N
-        jLabel1.setText("<html> Made by Just Vice</html>");
+        jLabel1.setText("<html> Made by SPLIT VICE</html>");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Logo1.png"))); // NOI18N
 
@@ -879,29 +879,15 @@ tutorial of how to do so in a txt file.
     }//GEN-LAST:event_PopUpMessagesComboActionPerformed
 
     private void twitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twitterMouseClicked
-        Run.openLink("https://justvice.github.io/s/twitter");
+        Run.openLink("http://split-vice.com/s/twitter");
     }//GEN-LAST:event_twitterMouseClicked
 
     private void alllinksMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alllinksMouseClicked
-//        if (Desktop.isDesktopSupported()) {
-//            try {
-//                Desktop.getDesktop().browse(new URI("https://justvice.wixsite.com/info"));
-//            } catch (URISyntaxException | IOException ex) {
-//                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-Run.openLink("https://justvice.github.io/h/technology/java/text-encryptor/");
+Run.openLink("http://split-vice.com/technology/java/text-encryptor/");
     }//GEN-LAST:event_alllinksMouseClicked
 
     private void githubMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_githubMouseClicked
-//        if (Desktop.isDesktopSupported()) {
-//            try {
-//                Desktop.getDesktop().browse(new URI("https://github.com/JustVice?tab=repositories"));
-//            } catch (URISyntaxException | IOException ex) {
-//                Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
-        Run.openLink("https://justvice.github.io/s/github-repos");
+        Run.openLink("http://split-vice.com/s/github-repos");
     }//GEN-LAST:event_githubMouseClicked
 
     private void deleteAllDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAllDataActionPerformed
@@ -946,12 +932,12 @@ Run.openLink("https://justvice.github.io/h/technology/java/text-encryptor/");
 
     private void alllinks1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alllinks1MouseClicked
         // TODO add your handling code here:
-        Run.openLink("https://justvice.github.io/s/links");
+        Run.openLink("http://split-vice.com/links");
     }//GEN-LAST:event_alllinks1MouseClicked
 
     private void jButton_open_user_manualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_open_user_manualActionPerformed
         // TODO add your handling code here:
-        Run.openLink("https://github.com/JustVice/TextEncryptor/wiki");
+        Run.openLink("https://github.com/SplitVice/TextEncryptor/wiki");
     }//GEN-LAST:event_jButton_open_user_manualActionPerformed
 
     private void settings() {
